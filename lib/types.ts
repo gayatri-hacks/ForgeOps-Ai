@@ -1,0 +1,9 @@
+export type Severity = "critical" | "high" | "medium";
+export type Programme = { id:string; name:string; owner:string; status:"on_track"|"at_risk"|"recovering"; priority:"high"|"medium"; targetDate:string; completion:number };
+export type Milestone = { id:string; programmeId:string; name:string; owner:string; dueDate:string; durationDays:number; status:"open"|"complete"; dependsOn:string[]; materialComponentCode?:string };
+export type Component = { code:string; name:string; supplierId:string; leadDays:number; onHand:number; reorderPoint:number };
+export type BomItem = { programmeId:string; componentCode:string; required:number; assemblyDate:string };
+export type PurchaseOrder = { id:string; componentCode:string; supplierId:string; quantity:number; committedDate:string; status:"open"|"received" };
+export type Risk = { id:string; fingerprint:string; source:"Material"|"Schedule"|"Capacity"|"Regulatory"; severity:Severity; programmeId:string; milestoneId?:string; title:string; trigger:string; action:string; owner:string; targetDate:string; evidence:string[]; status:"open"|"resolved"; detectedAt:string };
+export type WorkCenter = { name:string; weeklyHours:number; plannedHours:number; programmeId:string };
+export type RegulatoryDocument = { id:string; programmeId:string; title:string; owner:string; approvalDue:string; status:"draft"|"approved" };

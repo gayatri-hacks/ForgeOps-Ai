@@ -1,0 +1,1 @@
+import "./globals.css"; export const metadata={title:"ForgeOps AI",description:"Hardware operations control tower"}; export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

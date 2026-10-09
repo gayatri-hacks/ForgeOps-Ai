@@ -1,0 +1,4 @@
+-- Compatibility entry point.
+-- Apply supabase/migrations/001_operational_repository.sql, then
+-- supabase/seed/001_fictional_demo.sql. The migration is canonical; this file
+-- intentionally contains no duplicate DDL so SQL-editor setup has one source of truth.

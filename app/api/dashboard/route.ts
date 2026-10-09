@@ -1,0 +1,1 @@
+import { dashboard } from "@/lib/store"; export const dynamic="force-dynamic"; export async function GET(){try{return Response.json(await dashboard())}catch(error){return Response.json({error:error instanceof Error?error.message:"Dashboard unavailable"},{status:503})}}
